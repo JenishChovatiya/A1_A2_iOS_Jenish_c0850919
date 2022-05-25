@@ -16,6 +16,8 @@
 		E3C33E55283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C33E54283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919Tests.swift */; };
 		E3C33E5F283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C33E5E283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITests.swift */; };
 		E3C33E61283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C33E60283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITestsLaunchTests.swift */; };
+		E3C33E6E283DCB1C0007A0BC /* AddyourCityVcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C33E6D283DCB1C0007A0BC /* AddyourCityVcViewController.swift */; };
+		E3C33E70283DD68D0007A0BC /* findTeableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C33E6F283DD68D0007A0BC /* findTeableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E3C33E5A283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = A1_A2_iOS_Jenish_c0850919UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C33E5E283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A1_A2_iOS_Jenish_c0850919UITests.swift; sourceTree = "<group>"; };
 		E3C33E60283D96180007A0BC /* A1_A2_iOS_Jenish_c0850919UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A1_A2_iOS_Jenish_c0850919UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3C33E6D283DCB1C0007A0BC /* AddyourCityVcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddyourCityVcViewController.swift; sourceTree = "<group>"; };
+		E3C33E6F283DD68D0007A0BC /* findTeableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findTeableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				E3C33E46283D96180007A0BC /* Assets.xcassets */,
 				E3C33E48283D96180007A0BC /* LaunchScreen.storyboard */,
 				E3C33E4B283D96180007A0BC /* Info.plist */,
+				E3C33E6D283DCB1C0007A0BC /* AddyourCityVcViewController.swift */,
+				E3C33E6F283DD68D0007A0BC /* findTeableViewCell.swift */,
 			);
 			path = A1_A2_iOS_Jenish_c0850919;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				E3C33E42283D96180007A0BC /* ViewController.swift in Sources */,
 				E3C33E3E283D96180007A0BC /* AppDelegate.swift in Sources */,
 				E3C33E40283D96180007A0BC /* SceneDelegate.swift in Sources */,
+				E3C33E6E283DCB1C0007A0BC /* AddyourCityVcViewController.swift in Sources */,
+				E3C33E70283DD68D0007A0BC /* findTeableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
