@@ -13,11 +13,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var userMapView: MKMapView!
     
+  
+    @IBAction func goBtn(_ sender: Any)
+    {
+       // let sourcePlaceMAk = MKPlacemark(coordinate: locationManager.location!.coordinate)
+        //let destinationplaceMark = MKPlacemark(coordinate: destination)
+        
+        //let direction
+    }
+    	
     var arrayCity: [MKMapItem] = []
     
     //applay location manager
     let locationManager = CLLocationManager()
     
+    var destination: CLLocationCoordinate2D!
     var addpolygon : MKPolygon? = nil
     
     override func viewDidLoad() {
@@ -50,17 +60,49 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         
+        //double  tap
+        let userdoubletap = UITapGestureRecognizer(target: self, action: #selector(doubletaped))
+        userdoubletap.numberOfTapsRequired = 2
+        userdoubletap.numberOfTouchesRequired = 1
+        self.userMapView.addGestureRecognizer(userdoubletap)
+        
+        
         //when user longpressed on screen
         let userLongPressedRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(whenpressed))
         self.userMapView.addGestureRecognizer(userLongPressedRecognizer)
     	}
+    
+    //doubletap gesture callout
+    @objc func doubletaped(sender: UITapGestureRecognizer)
+    {
+        print("double tap gesture recognized")
+        let touchPoint = sender.location(in: userMapView)
+                        let coordinate = userMapView.convert(touchPoint, toCoordinateFrom: userMapView)
+                        let annotation = MKPointAnnotation()
+                        annotation.title = "B"
+                        annotation.coordinate = coordinate
+                        userMapView.addAnnotation(annotation)
+    }
+    
 
     @objc func whenpressed(sender: UILongPressGestureRecognizer)
         {
             let alert = UIAlertController(title: "Want to add this location", message: "Add !!", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!)		
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [self] (action: UIAlertAction!)
                 in
+                /*let touchPoint = sender.location(in: userMapView)
+                let coordinate = userMapView.convert(touchPoint, toCoordinateFrom: userMapView)
+                let annotation = MKPointAnnotation()
+                annotation.title = "A"
+                annotation.coordinate = coordinate
+                userMapView.addAnnotation(annotation)*/
+                
+               // destination = coordinate
+                
+                
+                
+                
                 let searcscreen = self.storyboard?.instantiateViewController(withIdentifier: "AddyourCityVcViewController") as! AddyourCityVcViewController
                 searcscreen.viewofMap = self.userMapView
                 searcscreen.delegate = self
@@ -85,7 +127,9 @@ extension ViewController: CLLocationManagerDelegate
         userMapView.setRegion(region, animated: true)
         userMapView.showsUserLocation = true
         
-        
+        let annotation = MKPointAnnotation()
+        annotation.title = "Current Location"
+        userMapView.addAnnotation(annotation)
     }
 }
 
