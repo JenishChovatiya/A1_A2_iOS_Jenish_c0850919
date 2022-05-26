@@ -43,11 +43,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         locationManager.startUpdatingLocation()
         
         
-        //double  tap
-        let userdoubletap = UITapGestureRecognizer(target: self, action: #selector(doubletaped))
-        userdoubletap.numberOfTapsRequired = 2
-        userdoubletap.numberOfTouchesRequired = 1
-        self.userMapView.addGestureRecognizer(userdoubletap)
         
         
         //when user longpressed on screen
@@ -57,7 +52,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         thingg.rightBarButtonItem = UIBarButtonItem(title: "GO", style: .plain, target: self, action: #selector(whentappedonpho))
         self.navigationBar.items = [thingg]
         
-    }//view did load over here
+    }
+    
+    //view did load over here
+    
+    
     
     
     override func viewWillAppear(_ animated: Bool)
@@ -177,53 +176,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
    
     
-    func insertingPolygon()
-    {
-        var points: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
-        
-        for i in 0..<arrayCity.count
-        {
-            points.append(arrayCity[i].placemark.coordinate)
-        }
-        let polygon = MKPolygon(coordinates: points, count: points.count)
-        self.addpolygon = polygon
-        userMapView.addOverlay(polygon)
-        
-        
-    }
-
-
-    
-    
-    //doubletap gesture callout
-    @objc func doubletaped(sender: UITapGestureRecognizer)
-    {
-        print("double tap gesture recognized")
-        let touchPoint = sender.location(in: userMapView)
-                        let coordinate = userMapView.convert(touchPoint, toCoordinateFrom: userMapView)
-                        let annotation = MKPointAnnotation()
-                        annotation.title = "B"
-                        annotation.coordinate = coordinate
-                        userMapView.addAnnotation(annotation)
-    }
-    
-    
-    
-   /* //applay polygon
-    func applayPolygon()
-    {
-        var cordinatepoints: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
-        
-        for i in 0..<arrayCity.count
-        {
-            cordinatepoints.append(arrayCity[i].placemark.coordinate)
-        }
-        
-        let polygoon = MKPolygon(coordinates: cordinatepoints, count: cordinatepoints.count)
-        self.addpolygon = polygoon
-        userMapView.addOverlay(polygoon)
-    }
-    */
+   
     
     
     
@@ -299,6 +252,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return Double(distanceInMeters)
     }
 
+    func insertingPolygon()
+           {
+               var points: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
+               
+               for i in 0..<arrayCity.count
+               {
+                   points.append(arrayCity[i].placemark.coordinate)
+               }
+               let polygon = MKPolygon(coordinates: points, count: points.count)
+               self.addpolygon = polygon
+               userMapView.addOverlay(polygon)
+               
+               
+           }
     
     
 }
