@@ -20,29 +20,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gd-Ef-imx">
-                                <rect key="frame" x="313" y="789" width="59" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go!"/>
-                                <connections>
-                                    <action selector="goBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lE0-MA-Uv0"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzC-hq-Dmo">
+                                <rect key="frame" x="0.0" y="93" width="414" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.82745105029999999" green="0.83529418710000003" blue="0.066666670139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Long Press for add Location" id="GRR-Gg-9Fx"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yzC-hq-Dmo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1MU-6G-brZ"/>
                             <constraint firstItem="j40-Uh-IM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="44v-7d-nDo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j40-Uh-IM0" secondAttribute="trailing" id="47V-yd-DFm"/>
                             <constraint firstAttribute="trailing" secondItem="j40-Uh-IM0" secondAttribute="trailing" id="B7k-8N-CDm"/>
+                            <constraint firstItem="yzC-hq-Dmo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="M5Y-3m-Yxd"/>
                             <constraint firstItem="j40-Uh-IM0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MUt-WT-GXq"/>
                             <constraint firstAttribute="bottom" secondItem="j40-Uh-IM0" secondAttribute="bottom" id="QdV-7t-oGg"/>
                             <constraint firstItem="j40-Uh-IM0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="abl-Ad-uZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="yzC-hq-Dmo" secondAttribute="trailing" id="wZa-mA-toy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZhT-h6-rMW"/>
                     <connections>
+                        <outlet property="navigationBar" destination="yzC-hq-Dmo" id="OQm-CJ-BSn"/>
                         <outlet property="userMapView" destination="j40-Uh-IM0" id="wY0-Ie-17n"/>
                     </connections>
                 </viewController>
